@@ -6,7 +6,7 @@ function ColorsList({colors}){
     return (
         <div className="container">
             <div className="ColorsList-header">
-                <h3>Welcome to the color factor</h3>
+                <h3>Welcome to the color factory!</h3>
                 <h2><Link to="/colors/new">Add a color</Link></h2>
             </div>
             <div className="ColorsList">
