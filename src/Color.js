@@ -2,14 +2,14 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory, useParams, Link } from 'react-router-dom'
 
-function Color({ colors }){
-    const color = useParams();
+function Color({colors}){
+    const param = useParams();
     const history = useHistory();
     const [currentColor, setCurrentColor] = useState(null)
 
     //if the color is not valid redirect to home page
-    if(color){
-        let res = colors.filter(color => color.name === color)
+    if(param.color){
+        let res = colors.filter(color => color.name === param.color)
         if(res.length < 1){
             history.push("/colors")
         }
@@ -17,11 +17,11 @@ function Color({ colors }){
 
     useEffect(() => {
         function updateColor(){
-            let res = colors.filter(color => color.name === color)
+            let res = colors.filter(color => color.name === param.color)
             setCurrentColor(res[0])
         }
     updateColor();
-    }, [color]);
+    }, [param]);
 
     let colorPage = currentColor ? (<div style={{backgroundColor: currentColor.code}}>
                                         <p>THIS IS {currentColor.name}</p>
