@@ -11,7 +11,7 @@ function ColorsList({colors}){
             </div>
             <div className="ColorsList">
                 <p>Please select a color.</p>
-                {colors === [] ? null : (<ul>{colors.map(color => <li key={color.name}><Link to={`/colors/${color.name}`}>{color.name}</Link></li>)}</ul>)}
+                {colors === [] ? null : (<ul>{colors.map(color => <li key={color.name} data-testid="color-link"><Link to={`/colors/${color.name}`}>{color.name}</Link></li>)}</ul>)}
             </div>
         </div>
     )
