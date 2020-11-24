@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ColorForm from './ColorForm'
 
-function ColorsList({ colors }){
+function ColorsList({colors}){
     return (
         <div className="container">
             <div className="ColorsList-header">

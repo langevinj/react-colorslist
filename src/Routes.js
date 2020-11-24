@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { Route, Switch, Redirect } from "react-router-dom"
+import { Route, Switch, Redirect, BrowserRouter } from "react-router-dom"
 import ColorsList  from './ColorsList'
 import Color from './Color'
 import ColorForm from './ColorForm'
 
-function Routes() {
-    const [colors, setColors] = ([])
+function Routes({colors}) {
+    const [allColors, setColors] = useState(colors)
 
     const addColor = (colorObj) => {
         setColors(oldColors => (
@@ -14,20 +14,22 @@ function Routes() {
     }
 
     return (
+        <BrowserRouter>
         <Switch>
             <Route exact path="/colors/new"><ColorForm addColor={addColor}/></Route>
-            <Route exact path="/colors/:color"><Color colors={colors}/></Route>
-            <Route exact path="/colors"><ColorsList /></Route>
+            <Route exact path="/colors/:color"><Color colors={allColors}/></Route>
+            <Route exact path="/colors"><ColorsList colors={allColors}/></Route>
             <Redirect to="/colors"></Redirect>
         </Switch>
+        </BrowserRouter>
     )
 }
 
-// Routes.defaultProps = {
-//     colors: [
-//         { name: "red", code: "#fc0f03" },
-//         { name: "blue", code: "#5203fc" }
-//     ]
-// }
+Routes.defaultProps = {
+    colors: [
+        { name: "red", code: "#fc0f03" },
+        { name: "blue", code: "#5203fc" }
+    ]
+}
 
 export default Routes;

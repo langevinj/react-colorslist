@@ -1,16 +1,15 @@
 
 import React, { useState, useEffect } from 'react'
 import { useHistory, useParams, Link } from 'react-router-dom'
-import { allColors } from './allColors'
 
-function Color(){
+function Color({ colors }){
     const color = useParams();
     const history = useHistory();
     const [currentColor, setCurrentColor] = useState(null)
 
     //if the color is not valid redirect to home page
     if(color){
-        let res = allColors.filter(color => color.name === color)
+        let res = colors.filter(color => color.name === color)
         if(res.length < 1){
             history.push("/colors")
         }
@@ -18,7 +17,7 @@ function Color(){
 
     useEffect(() => {
         function updateColor(){
-            let res = allColors.filter(color => color.name === color)
+            let res = colors.filter(color => color.name === color)
             setCurrentColor(res[0])
         }
     updateColor();

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
-function ColorForm(addColor){
+function ColorForm({addColor}){
     const history = useHistory();
     const [colorObj, setColorObj] = useState({
         name: "",
