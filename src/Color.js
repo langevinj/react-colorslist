@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { useHistory, useParams, Link } from 'react-router-dom'
+import './Color.css'
 
 function Color({colors}){
     const param = useParams();
@@ -23,10 +24,10 @@ function Color({colors}){
     updateColor();
     }, [param]);
 
-    let colorPage = currentColor ? (<div data-testid="Color-container" style={{backgroundColor: currentColor.code}}>
+    let colorPage = currentColor ? (<div data-testid="Color-container" className="color-container" style={{backgroundColor: currentColor.code}}>
                                         <p>THIS IS {currentColor.name}</p>
                                         <p>ISN'T IT BEAUTIFUL</p>
-                                        <p><Link to="/colors">GO BACK</Link></p>
+                                        <p><Link to="/colors" className="back-link">GO BACK</Link></p>
                                     </div>) : null
 
     return(

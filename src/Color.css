@@ -1,0 +1,15 @@
+.color-container{
+    height: 100em;
+    margin-top: 0;
+    font-size: 100px;
+    text-transform: uppercase;
+    color: white;
+}
+
+p{
+    margin-top: 0;
+}
+
+a:hover{
+    color: black;
+}
