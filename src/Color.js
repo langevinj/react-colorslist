@@ -23,7 +23,7 @@ function Color({colors}){
     updateColor();
     }, [param]);
 
-    let colorPage = currentColor ? (<div style={{backgroundColor: currentColor.code}}>
+    let colorPage = currentColor ? (<div data-testid="Color-container" style={{backgroundColor: currentColor.code}}>
                                         <p>THIS IS {currentColor.name}</p>
                                         <p>ISN'T IT BEAUTIFUL</p>
                                         <p><Link to="/colors">GO BACK</Link></p>
