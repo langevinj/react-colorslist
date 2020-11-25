@@ -3,13 +3,19 @@ import Routes from './Routes';
 import { MemoryRouter } from 'react-router-dom'
 
 test('it renders without crashing', function () {
-    const { getByText } = render(<Routes />)
+    const { getByText } = render(
+    <MemoryRouter>
+            <Routes />
+    </MemoryRouter>)
 
     const title = getByText("Welcome to the color factory!")
     expect(title).toBeInTheDocument();
 });
 
 it('matches snapshot', function () {
-    const { asFragment } = render(<Routes />)
+    const { asFragment } = render(
+        <MemoryRouter>
+            <Routes />
+        </MemoryRouter>)
     expect(asFragment).toMatchSnapshot()
 })

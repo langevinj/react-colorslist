@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Route, Switch, Redirect, BrowserRouter } from "react-router-dom"
+import { Route, Switch, Redirect} from "react-router-dom"
 import ColorsList  from './ColorsList'
 import Color from './Color'
 import ColorForm from './ColorForm'
@@ -16,14 +16,12 @@ function Routes() {
     }
 
     return (
-        <BrowserRouter>
         <Switch>
             <Route exact path="/colors/new"><ColorForm addColor={addColor}/></Route>
             <Route exact path="/colors/:color"><Color colors={localColors}/></Route>
             <Route exact path="/colors"><ColorsList colors={localColors}/></Route>
             <Redirect to="/colors"></Redirect>
         </Switch>
-        </BrowserRouter>
     )
 }
 
