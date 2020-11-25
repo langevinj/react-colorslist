@@ -8,7 +8,6 @@ import useLocalStorage from './hooks'
 function Routes() {
     const [localColors, setLocalColors] = useLocalStorage('color')
     
-
     const addColor = (colorObj) => {
         setLocalColors(oldColors => (
             [colorObj, ...oldColors]
@@ -26,3 +25,4 @@ function Routes() {
 }
 
 export default Routes;
+

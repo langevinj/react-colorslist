@@ -1,5 +1,6 @@
 import { getByText, render, screen } from '@testing-library/react';
 import Color from './Color';
+import App from './App'
 import { MemoryRouter, createMemoryHistory } from 'react-router-dom'
 import { renderWithRouter } from './testutilities'
 
@@ -21,3 +22,12 @@ it('matches snapshot', function () {
 //     // expect(getByTestId("Color-container")).toHaveAttribute('style','backgroundColor: #fc0f03')
 //     expect(getByText('THIS IS red')).toBeInTheDocument();
 // });
+
+// it("should have the correct background color", function() {
+//     const { getByTestId, getByText } = render (<MemoryRouter initialEntries={['/colors/red']}>
+//         <Color colors={colors} />
+//     </MemoryRouter>)
+
+//     // expect(getByTestId('Color-container')).toBeInTheDocument()
+//     expect(getByText("THIS IS RED")).toBeInTheDocument();
+// })
