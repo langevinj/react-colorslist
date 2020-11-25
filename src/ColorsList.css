@@ -1,0 +1,39 @@
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    background-image: url("colorpalette.jpg");
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: cover;
+    height: 65em;
+}
+
+.ColorsList-header{
+    margin-top: 10px;
+    background: rgba(205, 255, 255, 0.80);
+    display: inline-block;
+    padding: 4em;
+}
+
+.ColorsList{
+    background: rgba(177, 140, 226, 0.8);
+    border-radius: 20px;
+    display: inline-block;
+    padding: 4em;
+    margin-top: 2em;
+}
+
+.color-link{
+    color: white;
+    font-size: 20px;
+}
