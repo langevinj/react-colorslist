@@ -35,5 +35,5 @@ it("displays the correct link and color qualities", function () {
     
     //expect link to the correct color
     const link = getByTestId('color-link')
-    expect(link).toContainHTML('<a href="/colors/red">red</a>')
+    expect(link).toContainHTML('<a href="/colors/red" className="color-link">red</a>')
 });

@@ -1,0 +1,18 @@
+.ColorForm-container{
+    background-image: url("colorwheel.jpg");
+    background-size: cover;
+    height: 65em;
+    background-repeat: no-repeat;
+}
+
+.form{
+    background: rgba(205, 255, 255, 0.8);
+    display: inline-block;
+    padding: 4em;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.name-container, .code-container{
+    margin: 10px;
+}

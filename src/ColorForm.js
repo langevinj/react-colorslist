@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import './ColorForm.css'
 
 function ColorForm({addColor}){
     const history = useHistory();
@@ -24,14 +25,19 @@ function ColorForm({addColor}){
 
     return(
         <div className="ColorForm-container">
+            <div className="form">
             <form onSubmit={handleSubmit}>
-                <label htmlFor="name">Color name:</label>
-                <input type="text" name="name" id="name" value={colorObj.name} onChange={handleChange} placeholder="Enter a name for the color"></input>
-                <label htmlFor="code">Color value:</label>
-                <input name="code" id="code" value={colorObj.code} onChange={handleChange} type="color"></input>
-                <br></br>
+                <div className="name-container">
+                    <label htmlFor="name">Color name:</label>
+                    <input type="text" name="name" id="name" value={colorObj.name} onChange={handleChange} placeholder="Enter a name for the color"></input>
+                </div>
+                <div className="code-container">
+                    <label htmlFor="code">Color value:</label>
+                    <input name="code" id="code" value={colorObj.code} onChange={handleChange} type="color"></input>
+                </div>
                 <button>Add this color</button>
             </form>
+            </div>
         </div>
     )
 }
